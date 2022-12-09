@@ -13,7 +13,7 @@ public class FuturoCandidato {
     @Column(nullable = false, length = 200)
     private String nomeCompleto;
 
-    @Column(nullable = false, length = 120)
+    @Column(nullable = false, length = 120, unique = true)
     private String email;
 
     @Column(nullable = false)

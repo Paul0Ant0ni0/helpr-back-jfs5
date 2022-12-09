@@ -32,6 +32,10 @@ public class FuturoClienteController {
         return this.futuroClienteService.buscarPorEmail(buscaremail);
     }
 
+    @PostMapping("/futuros-clientes")
+    public FuturoCliente salvar(@Valid @RequestBody FuturoClienteDTO dto) {
+        return this.futuroClienteService.salvar(dto);
+    }
 
 
     @GetMapping("/futuros-clientes/cpf")
@@ -40,10 +44,6 @@ public class FuturoClienteController {
     }
 
 
-    @PostMapping("/futuros-clientes")
-    public FuturoCliente salvar(@Valid @RequestBody FuturoClienteDTO dto) {
-        return this.futuroClienteService.salvar(dto);
-    }
 
 
     @PutMapping("/futuros-clientes/{idFuturoCliente}")

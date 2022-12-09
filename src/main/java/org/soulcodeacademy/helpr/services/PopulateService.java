@@ -107,14 +107,14 @@ public class PopulateService {
 //       this.futuroCandidatoRepository.findAll();
 //        System.out.println(futuroCandidatoRepository.findAll());
 
-       Optional<FuturoCandidato> futuroCandidato = this.futuroCandidatoRepository.findById(5);
-                futuroCandidato.orElseThrow(()-> new RuntimeException("NÃO ENCONTRADO!!!"));
-        System.out.println(futuroCandidatoRepository.findById(5));
+//       Optional<FuturoCandidato> futuroCandidato = this.futuroCandidatoRepository.findById(5);
+//                futuroCandidato.orElseThrow(()-> new RuntimeException("NÃO ENCONTRADO!!!"));
+//        System.out.println(futuroCandidatoRepository.findById(5));
 
 //        List<FuturoCandidato> futuroCandidatos = this.futuroCandidatoRepository.findByNomeCompletoContaining("André Pereira");
 //        System.out.println(futuroCandidatos.toString());
 
-//        List<FuturoCandidato> futuroCandidatos = this.futuroCandidatoRepository.findByEmail("jhonatan@gmail.com");
+//        Optional<FuturoCandidato> futuroCandidatos = this.futuroCandidatoRepository.findByEmail("jhonatan@gmail.com");
 //        System.out.println(futuroCandidatos.toString());
 
 
@@ -124,9 +124,9 @@ public class PopulateService {
 //        List<FuturoCandidato> futuroCandidato = this.futuroCandidatoRepository.findBySetor(MARKETING);
 //       System.out.println(futuroCandidato.toString()); // RequestParam MÉTODO POSTMAN
 
-//        Optional<FuturoCandidato> futuroCandidato = this.futuroCandidatoRepository.findByEmail("");
-//                futuroCandidato.orElseThrow(()-> new RuntimeException("NÃO ENCONTRADO!!!"));
-//        System.out.println(futuroCandidatoRepository.findById(1));
+        Optional<FuturoCandidato> futuroCandidato = this.futuroCandidatoRepository.findByEmail("jhonatan@gmail.com");
+               futuroCandidato.orElseThrow(()-> new RuntimeException("NÃO ENCONTRADO!!!"));
+               System.out.println(futuroCandidatoRepository.findById(1));
 
 
         // Dados de Dependente Teste
