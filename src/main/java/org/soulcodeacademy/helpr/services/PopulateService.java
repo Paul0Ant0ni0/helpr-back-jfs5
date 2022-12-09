@@ -13,6 +13,8 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+import static org.soulcodeacademy.helpr.domain.enums.Setor.MARKETING;
+
 // Torna o objeto de PopulateService disponível para toda a aplicação (global)
 @Service // indica para o Spring que esta classe será gerenciada por ele
 public class PopulateService {
@@ -84,28 +86,61 @@ public class PopulateService {
 
         // Dados do futuroCandidato
         FuturoCandidato futuroCandidato1 = new FuturoCandidato(null, "André Pereira", "andre@gmail.com", "Executa grandes projetos com eficiência e eficácia!", Setor.DESENVOLVIMENTO);
-        FuturoCandidato futuroCandidato2 = new FuturoCandidato(null, "Jhonatan Oliveira", "jhonatan@gmail.com", "Criativo e organizado", Setor.MARKETING);
+        FuturoCandidato futuroCandidato2 = new FuturoCandidato(null, "Jhonatan Oliveira", "jhonatan@gmail.com", "Criativo e organizado", MARKETING);
         this.futuroCandidatoRepository.save(futuroCandidato1);
         this.futuroCandidatoRepository.save(futuroCandidato2);
 
-        List<FuturoCandidato> futuroCandidato3 = this.futuroCandidatoRepository.findByEmail("andre@gmail.com");
-        System.out.println(futuroCandidato3.toString());
+        //List<FuturoCandidato> futuroCandidato3 = this.futuroCandidatoRepository.findByEmail("andre@gmail.com");
+        //System.out.println(futuroCandidato3.toString());
 
-        List<FuturoCandidato> futuroCandidato4 = this.futuroCandidatoRepository.findByNomeCompletoContaining("Oliveira");
-        System.out.println(futuroCandidato4.toString());
+        //List<FuturoCandidato> futuroCandidato4 = this.futuroCandidatoRepository.findByNomeCompletoContaining("Oliveira");
+        //System.out.println(futuroCandidato4.toString());
+
+        /*Listar todos os colaboradores;OKok
+    Listar um colaborador;Ok
+    Filtrar por nome; OK
+    Filtrar por setor; OK
+    Filtrar por email; ok
+    Salvar colaborador;
+    Deletar colaborador; */
+
+//       this.futuroCandidatoRepository.findAll();
+//        System.out.println(futuroCandidatoRepository.findAll());
+
+       Optional<FuturoCandidato> futuroCandidato = this.futuroCandidatoRepository.findById(5);
+                futuroCandidato.orElseThrow(()-> new RuntimeException("NÃO ENCONTRADO!!!"));
+        System.out.println(futuroCandidatoRepository.findById(5));
+
+//        List<FuturoCandidato> futuroCandidatos = this.futuroCandidatoRepository.findByNomeCompletoContaining("André Pereira");
+//        System.out.println(futuroCandidatos.toString());
+
+//        List<FuturoCandidato> futuroCandidatos = this.futuroCandidatoRepository.findByEmail("jhonatan@gmail.com");
+//        System.out.println(futuroCandidatos.toString());
+
+
+//        List<FuturoCandidato> futuroCandidatos = this.futuroCandidatoRepository.findByEmail("jhonatan@gmail.com");
+//        System.out.println(futuroCandidatos.toString());
+
+//        List<FuturoCandidato> futuroCandidato = this.futuroCandidatoRepository.findBySetor(MARKETING);
+//       System.out.println(futuroCandidato.toString()); // RequestParam MÉTODO POSTMAN
+
+//        Optional<FuturoCandidato> futuroCandidato = this.futuroCandidatoRepository.findByEmail("");
+//                futuroCandidato.orElseThrow(()-> new RuntimeException("NÃO ENCONTRADO!!!"));
+//        System.out.println(futuroCandidatoRepository.findById(1));
+
 
         // Dados de Dependente Teste
         //Nome;
         //CPF;
         //Data de Nascimento;
         //Escolaridade;
-        Dependente dependente1 = new Dependente(null,"Bianca Torres","123.123.123-33", LocalDate.of(2002,12,12), "Ensino Médio");
-        dependente1.setResponsavel(f1); //Antes de salvar, utiliza-se o método set para associar dependente a funcionário
-        this.dependenteRepository.save(dependente1);
-
-        Dependente dependente2 = new Dependente(null,"Amanda Aparecida","080.123.123-24", LocalDate.of(2010,01,12), "Ensino Fundamental");
-        dependente2.setResponsavel(f1); //Antes de salvar, utiliza-se o método set para associar dependente a funcionário
-        this.dependenteRepository.save(dependente2);
+//        Dependente dependente1 = new Dependente(null,"Bianca Torres","123.123.123-33", LocalDate.of(2002,12,12), "Ensino Médio");
+//        dependente1.setResponsavel(f1); //Antes de salvar, utiliza-se o método set para associar dependente a funcionário
+//        this.dependenteRepository.save(dependente1);
+//
+//        Dependente dependente2 = new Dependente(null,"Amanda Aparecida","080.123.123-24", LocalDate.of(2010,01,12), "Ensino Fundamental");
+//        dependente2.setResponsavel(f1); //Antes de salvar, utiliza-se o método set para associar dependente a funcionário
+//        this.dependenteRepository.save(dependente2);
 
         //Dependente dependente = this.dependenteRepository.findByCpf("123.123.123-00")
         //        .orElseThrow(()-> new RuntimeException("CPF não encontrado!")); //Optional
@@ -118,16 +153,18 @@ public class PopulateService {
         //List<Dependente> dependentesDoResponsavel = this.dependenteRepository.findByResponsavel(f1);
         //.out.println(dependentesDoResponsavel.toString());
 
-       LocalDate data1= LocalDate.of(1999,11,21);
-        LocalDate data2= LocalDate.of(2013,11,21);
+//       LocalDate data1= LocalDate.of(1999,11,21);
+//        LocalDate data2= LocalDate.of(2013,11,21);
+//
+//       List<Dependente> buscarEntreDatas= this.dependenteRepository.buscarEntreDatas(data1, data2);
+//        if (buscarEntreDatas.isEmpty()) {
+//            throw new RuntimeException("Não existe depentes neste intervalo de datas!");
+//        }
+//        System.out.println(buscarEntreDatas.toString());
+//
 
-       List<Dependente> buscarEntreDatas= this.dependenteRepository.buscarEntreDatas(data1, data2);
-        if (buscarEntreDatas.isEmpty()) {
-            throw new RuntimeException("Não existe depentes neste intervalo de datas!");
-        }
-        System.out.println(buscarEntreDatas.toString());
 
-    }
+   }
 }
 
 
