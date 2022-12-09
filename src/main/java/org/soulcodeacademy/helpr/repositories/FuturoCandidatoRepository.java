@@ -5,13 +5,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+import java.util.Optional;
 
 
 @Repository
 public interface FuturoCandidatoRepository extends JpaRepository <FuturoCandidato, Integer> {
 
-    List<FuturoCandidato> findByEmail (String email);
+    Optional<FuturoCandidato> findByEmail (String email);
 
     List<FuturoCandidato> findBySetor (Setor setor);
 

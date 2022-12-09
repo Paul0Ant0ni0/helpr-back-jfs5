@@ -37,13 +37,9 @@ public class FuturoCandidatoService {
         return this.futuroCandidatoRepository.findBySetor(setor);
     }
 
-
-    public List<FuturoCandidato> buscarPorEmail(String email) {
-        List<FuturoCandidato> futuroCandidato = this.futuroCandidatoRepository.findByEmail(email);
-        if (futuroCandidato.isEmpty()) {
-            throw new RecursoNaoEncontradoError("Nenhum futuro candidato referente a este email foi encontrado.");
-        }
-        return futuroCandidato;
+    public FuturoCandidato buscarPorEmail(String email) {
+       return this.futuroCandidatoRepository.findByEmail(email)
+                .orElseThrow(() -> new RecursoNaoEncontradoError("Nenhum futuro candidato encontrado por este email."));
     }
 
     public FuturoCandidato salvar(FuturoCandidatoDTO dto) {
@@ -56,5 +52,6 @@ public class FuturoCandidatoService {
         FuturoCandidato futuroCandidato = this.getFuturoCandidato(idFuturoCandidato);
         this.futuroCandidatoRepository.delete(futuroCandidato);
     }
+
 
 }
