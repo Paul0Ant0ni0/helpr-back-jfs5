@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "usuarios") // coloca um nome específico na tabela
-public abstract class Usuario { // Não será possível criar objetos desta classe
+public class Usuario { // Não será possível criar objetos desta classe
     @Id // torna o campo abaixo uma PRIMARY KEY
     @GeneratedValue(strategy = GenerationType.IDENTITY) // preenche o campo id com AUTO_INCREMENT
     protected Integer id;
