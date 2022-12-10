@@ -13,6 +13,7 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
     Optional<Usuario> findByCpf(String cpf); // WHERE cpf = cpf
     List<Usuario> findByNome(String nome); // WHERE nome = nome
     List<Usuario> findByNomeContaining(String busca); // Filtrar pelo nome
+
 }
 
 // Obs: Seguindo a convenção findBy o Spring implementa o método derivado/customizado

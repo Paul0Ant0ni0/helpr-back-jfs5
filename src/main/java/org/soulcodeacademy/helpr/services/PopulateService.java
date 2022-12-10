@@ -22,6 +22,9 @@ public class PopulateService {
     private CargoRepository cargoRepository;
 
     @Autowired
+    private UsuarioService usuarioService;
+
+    @Autowired
     private FuncionarioRepository funcionarioRepository;
 
     @Autowired
@@ -163,6 +166,8 @@ public class PopulateService {
 //        System.out.println(buscarEntreDatas.toString());
 //
 
+          //Usuario usuario = this.usuarioService.getEmailUsuario("renato.pereira@gmail.com");
+          //System.out.println(usuario.toString());
 
    }
 }
