@@ -29,33 +29,33 @@ public class FuturoCandidatoController {
         return this.futuroCandidadoService.listarCandidatos();
     }
 
-    @GetMapping("/futuro-candidato/{idFuturoCandidato}")
+    @GetMapping("/futuros-candidatos/{idFuturoCandidato}")
     public FuturoCandidato getFuturoCandidato(@PathVariable Integer idFuturoCandidato) {
         return this.futuroCandidadoService.getFuturoCandidato(idFuturoCandidato);
     }
 
     // /localhost:8080/futurocandidato/buscar?setor=MARKETING
-    @GetMapping("/futuro-candidato/buscar")
+    @GetMapping("/futuros-candidatos/buscar")
     public List<FuturoCandidato> listarPorSetor(@RequestParam Setor setor) {
         return this.futuroCandidadoService.listarPorSetor(setor);
     }
 
-   @GetMapping("/futuro-candidato/email")
+   @GetMapping("/futuros-candidatos/email")
    public FuturoCandidato buscarPorEmail(@RequestParam String buscaremail) {
       return this.futuroCandidadoService.buscarPorEmail(buscaremail);
    }
 
-    @GetMapping("/futuro-candidato/nome-completo")
+    @GetMapping("/futuros-candidatos/nome-completo")
     public List<FuturoCandidato> listarPorNome(@RequestParam String nomeCompleto) {
         return this.listarPorNome(nomeCompleto);
     }
 
-    @PostMapping("/futuro-candidato/")
+    @PostMapping("/futuros-candidatos/")
     public FuturoCandidato salvar(@RequestBody FuturoCandidatoDTO dto) {
         return this.futuroCandidadoService.salvar(dto);
     }
 
-    @DeleteMapping("futuro-candidato/{idFuturoCandidado}")
+    @DeleteMapping("futuros-candidatos/{idFuturoCandidato}")
     public void deletar(@PathVariable Integer idFuturoCandidato) {
         this.futuroCandidadoService.deletar(idFuturoCandidato);
     }
